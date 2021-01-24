@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-ssr",
+  "name": "tcb-nuxt-auth-ssr",
   "version": "1.0.0",
-  "description": "云开发 CloudBase Nuxt SSR App",
-  "author": "Booker Zhao",
+  "description": "Nuxt SSR + Nuxt/auth+ 服务端部署 + 静态网站部署 + 动静分离",
+  "author": "DaZiYuan",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@cloudbase/vue-provider": "^0.3.0",
+    "@nuxtjs/auth-next": "5.0.0-1611415963.92eabbd",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
