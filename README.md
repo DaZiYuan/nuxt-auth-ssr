@@ -1,3 +1,6 @@
+# 没弄完，不可用
+---
+
 <a href="https://github.com/TencentCloudBase/cloudbase-templates"><img src="https://main.qcloudimg.com/raw/338ce75aaf22e407a02d8b5f096212d0.png"></a>
 
 # Nuxt SSR 应用示例

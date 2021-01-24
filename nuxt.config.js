@@ -1,5 +1,5 @@
 export default {
-  mode: "universal",
+  target: 'server',
 
   server: {
     port: 5000, // default: 3000
@@ -33,7 +33,8 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: "~/plugins/cloudbase", mode: "client" }],
+  // { src: "~/plugins/cloudbase", mode: "client" }
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
@@ -41,7 +42,23 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
+  ],
+
+  auth: {
+    strategies: {
+      tcb: { scheme: '~/schemes/tcb.js' },
+    },
+    redirect: {
+      login: '/login',
+      logout: '/signed-out',
+      callback: '/login',
+      home: '/store'
+    },
+  },
+
   router: {
     base: "/nuxt-ssr"
   },
@@ -53,6 +70,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) { }
   }
 };

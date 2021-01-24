@@ -14,6 +14,9 @@
         >云开发 Vue 插件</a>
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">Nuxt 文档</a>
         <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
+        <nuxt-link to="auth">
+          后台页面
+        </nuxt-link>
       </div>
 
       <client-only>
@@ -102,23 +105,23 @@ export default {
     };
   },
   async mounted() {
-    this.envId = this.$cloudbase.config.env;
-    // 以匿名登录为例
-    try {
-      const auth = this.$cloudbase.auth({ persistence: "local" });
+    // this.envId = this.$cloudbase.config.env;
+    // // 以匿名登录为例
+    // try {
+    //   const auth = this.$cloudbase.auth({ persistence: "local" });
 
-      if (!auth.hasLoginState()) {
-        await auth.anonymousAuthProvider().signIn();
-      }
+    //   if (!auth.hasLoginState()) {
+    //     await auth.anonymousAuthProvider().signIn();
+    //   }
 
-      console.log("用户id", auth.hasLoginState().user.uid);
+    //   console.log("用户id", auth.hasLoginState().user.uid);
 
-      this.isLoginSuccss = true;
-    } catch (e) {
-      this.isLoginSuccss = false;
-      console.error(e);
-      console.log(e.code);
-    }
+    //   this.isLoginSuccss = true;
+    // } catch (e) {
+    //   this.isLoginSuccss = false;
+    //   console.error(e);
+    //   console.log(e.code);
+    // }
   },
   methods: {
     async callFunction() {
